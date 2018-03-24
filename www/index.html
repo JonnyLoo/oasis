@@ -43,20 +43,23 @@
 </head>
 
 <body>
-  <div id='circle'></div>
-  <select name='what did u do?'>
-    <option value='drive'>Drive a car</option>
-    <option value='phone'>Use the phone</option>
-    <option value='shower'>Take a shower</option>
-    <option value='food'>Throw away food</option>
-  </select>
-  <form id='input' class='hidden'>
-    Something:<br>
-    <input type='text'><br>
-    Something else:<br>
-    <input type='text'><br>
-    <input type='submit' name='click'>
-  </form>
+  <div id='nav'>
+    <div id='b0' class='block selected'>
+      <form id='input' class='fade-in'>
+        Something:<br>
+        <input type='text'><br>
+        Something else:<br>
+        <input type='text'><br><br>
+        <input type='submit' name='click'>
+      </form>
+    </div>
+    <div id='b1' class='block'></div>
+    <div id='b2' class='block'></div>
+    <div id='b3' class='block'></div>
+    <div id='b4' class='block'></div>
+    <div id='b5' class='block'></div>
+  </div>
+
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript">
