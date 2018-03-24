@@ -38,6 +38,7 @@
 }
 
 body {
+  font-family: 'Source Serif Pro', serif;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -48,6 +49,7 @@ body {
 
 /* Portrait layout (default) */
 #input {
+  font-family: 'Source Serif Pro', serif;
   color: #edf0ee;
   position: absolute;
   text-align: center;
