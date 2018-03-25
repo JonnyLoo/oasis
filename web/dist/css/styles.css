@@ -1,0 +1,83 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes grow {
+  from {}
+  to {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+body {
+  font-family: 'Source Serif Pro', serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #00735c;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Portrait layout (default) */
+#input {
+  font-family: 'Source Serif Pro', serif;
+  color: #edf0ee;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-in {
+  animation: fadein 1s linear;
+}
+
+#nav {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 5vh;
+}
+
+.block {
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+  background: #edf0ee;
+  position: relative;
+}
+
+.block:hover {
+  cursor: pointer;
+}
+
+#b0, #b3 {
+  background: #00493a;
+}
+
+#b1, #b4 {
+  background: #edf0ee;
+}
+
+#b2, #b5 {
+  background: #606462;
+}
+
+.selected {
+  position: absolute;
+  top: -65vh;
+  left: calc(50% - 200px);
+  animation: grow 1s ease-out 1 both;
+}
