@@ -1,2 +1,8 @@
-firebase
-localhost:4444
+###oasis
+
+**To Run**
+```node
+npm install
+cd web
+node app.js
+```
