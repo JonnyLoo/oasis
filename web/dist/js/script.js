@@ -43,3 +43,30 @@ document.addEventListener('DOMContentLoaded', function() {
     currSelected = page5;
   });
 });
+
+
+
+
+
+ //for slider
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("slide");
+var slider2 = document.getElementById("myRange2");
+var output2 = document.getElementById("slide2");
+output.innerHTML = slider.value;
+output2.innerHTML = slider2.value;
+slider2.oninput = function() {
+  output2.innerHTML = this.value;
+}
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+var slider3 = document.getElementById("myRange3");
+var output3 = document.getElementById("slide3");
+output3.innerHTML = slider3.value;
+slider3.oninput = function() {
+  output3.innerHTML = this.value;
+}
+//

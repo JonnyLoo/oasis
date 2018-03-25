@@ -16,14 +16,13 @@ const config = {
 firebase.initializeApp(config);
 const database = firebase.database();
 
-function writeData(user, email, something, something_else) {
-  database.ref('users/' + user).set({
-    username: user,
-    email: email,
-    data: {
-      something: something,
-      something_else: something_else
-    }
+function writeData(myRange,myRange2,myRange3,shover,drive) {
+  database.ref('users/test').set({
+    foodWaste: myRange,
+    waterWaste: shover,
+    drive:drive,
+    bottles:myRange2,
+    bags:myRange3
   });
 }
 
@@ -37,7 +36,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
-  writeData(req.body.username, req.body.email, req.body.something, req.body.something_else);
+  writeData(req.body.myRange,req.body.myRange2,req.body.myRange3, req.body.shover, req.body.drive);
   res.redirect('/');
 });
 

@@ -1,20 +1,38 @@
 <div id='nav'>
   <div id='b0' class='block selected'>
     <form method='POST' action='/register' id='input' class='fade-in'>
-      Something:<br>
-      <input id='something' type='text' name='something'><br>
-      Something else:<br>
-      <input id='something-else' type='text' name='something_else'><br>
-      username:<br>
-      <input id='username' type='text' name='username'><br>
-      email:<br>
-      <input id='email' type='text' name='email'><br>
+      how long did you drive(mins):<br>
+      <input id='drive' type='text' value=0 name='drive'><br><br>
+
+      how long did you take shower(mins)<br>
+      <input id='shover' type='text' value=0 name='shover'><br><br>
+
+      food you waste(grams)
+      <div id='slidebar' class="slidecontainer">
+      <input type="range" min="1" max="200" value="0" name=myRange class="slider" id="myRange">
+      <p id='a'>value: <span id="slide"></span></p>
+      </div>
+
+      how many plastic bolltes you recycle
+      <div id='slidebar2' class="slidecontainer">
+      <input type="range" min="1" max="15" value="1"name=myRange2 class="slider" id="myRange2">
+      <p id='b'>value: <span id="slide2"></span></p>
+      </div>
+
+      recyclable bag for shopping
+      <div id='slidebar3' class="slidecontainer">
+      <input type="range" min="1" max="5" value="1" name=myRange3 class="slider" id="myRange3">
+      <p id='c'>value: <span id="slide3"></span></p>
+      </div>
+
       <input id='btn' type='submit' name='go'>
     </form>
   </div>
+
   <div id='b1' class='block'></div>
   <div id='b2' class='block'></div>
   <div id='b3' class='block'></div>
   <div id='b4' class='block'></div>
   <div id='b5' class='block'></div>
+</div>
 </div>
