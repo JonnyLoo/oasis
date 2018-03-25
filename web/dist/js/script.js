@@ -45,9 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-
-
  //for slider
 
 var slider = document.getElementById("myRange");
@@ -69,4 +66,9 @@ output3.innerHTML = slider3.value;
 slider3.oninput = function() {
   output3.innerHTML = this.value;
 }
-//
+
+const input = document.querySelector('#input');
+const close = document.querySelector('#close');
+close.addEventListener('click', function() {
+  input.classList.toggle('hidden');
+});
