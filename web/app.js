@@ -32,8 +32,21 @@ app.use(express.static(__dirname + '/dist'));
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
-  res.render('landing');
+    var obj = {};
+
+    database.ref('users/test').once('value').then(function (snapshot) {
+        obj['bags'] = snapshot.child('bags').val();
+        obj['bottles'] = snapshot.child('bottles').val();
+        obj['drive'] = snapshot.child('drive').val();
+        obj['foodWaste'] = snapshot.child('foodWaste').val();
+        obj['waterWaste'] = snapshot.child('waterWaste').val();
+
+        res.render('landing', { data: obj });
+    });
+
+
 });
+
 
 app.post('/register', (req, res) => {
   writeData(req.body.myRange,req.body.myRange2,req.body.myRange3, req.body.shover, req.body.drive);

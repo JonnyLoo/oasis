@@ -72,3 +72,97 @@ const close = document.querySelector('#close');
 close.addEventListener('click', function() {
   input.classList.toggle('hidden');
 });
+
+function addData(chart, val, index) {
+    chart['data']['datasets'][0]['data'][index] += val;
+    chart.update();
+}
+
+function addData1(chart, val, usage) {
+    chart['data']['datasets'][usage]['data'][0] += val;
+    chart.update();
+}
+
+
+var ctx1 = document.getElementById("myDonutChart").getContext('2d');
+var myChart = new Chart(ctx1, {
+    type: 'doughnut',
+    data: {
+        labels: ["Transportation", "Water Usage", "Food Wasting", "Electricity"],
+        datasets: [{
+            data: [0, 0, 0, 100],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+var ctx2 = document.getElementById("myBarChart").getContext('2d');
+var myChart1 = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: "Saving",
+            data: [0],
+            backgroundColor: [
+
+                'rgba(50, 205, 50, 0.2)'
+            ],
+            borderColor: [
+                'rgba(50, 205, 50, 1)'
+            ],
+            borderWidth: 1
+        }, {
+            label: "Wasting",
+            data: [0],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)'
+            ],
+            borderWidth: 1
+        }]
+
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+
+addData(myChart, parseFloat(drive), 0);
+addData(myChart, parseFloat(waterWaste), 1);
+addData(myChart, parseFloat(foodWaste), 2);
+addData1(myChart1, parseFloat(bottles) + parseFloat(bags), 0);
+addData1(myChart1, -parseFloat(drive) - parseFloat(waterWaste) - parseFloat(foodWaste), 1);
+
